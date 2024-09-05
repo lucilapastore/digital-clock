@@ -13,20 +13,11 @@ function DigitalClock() {
   return (
     <>
       <div className="clock-container">
-        <div className="cover"></div>
-        <p className="date">{time.toDateString()}</p>
-        <div className="time">
-          <span className="clock">
-            {time.getHours().toString().padStart(2, "0")}:
-          </span>
-          <span className="clock">
-            {time.getMinutes().toString().padStart(2, "0")}:
-          </span>
-          <span className="secs">
-            {time.getSeconds().toString().padStart(2, "0")}
-          </span>
+        <div className="clock">
+          <p className="date">
+            {time.toLocaleTimeString("es-ES", { hour12: false })}
+          </p>
         </div>
-        <p className="date">{time.toLocaleTimeString()}</p>
       </div>
     </>
   );
